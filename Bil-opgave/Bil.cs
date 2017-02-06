@@ -47,9 +47,10 @@ namespace Bil_opgave
             return 1000;
         }
 
-        public Bil(string mærke, int prisexafgift, int købsår, int kmprliter )
+        public Bil(string mærke, string registringsnr, int prisexafgift, int købsår, int kmprliter )
         {
             this.Mærke = mærke;
+            this.RegistreringsNr = registringsnr;
             this.BilPrisExAfgift = prisexafgift;
             this.KøbsÅr = købsår;
             this.KmPrLiter = kmprliter;
