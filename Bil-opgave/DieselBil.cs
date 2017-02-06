@@ -32,7 +32,7 @@ namespace Bil_opgave
             {
                  sum += 2000;
             }
-            else if (KmPrLiter <= 15 && KmPrLiter >= 25)
+            else if (KmPrLiter >= 15 && KmPrLiter <= 25)
             {
                 sum += 1000;
             }
