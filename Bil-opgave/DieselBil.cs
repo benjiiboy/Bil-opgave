@@ -25,10 +25,10 @@ namespace Bil_opgave
         {
             if (PartikelFilter == false)
             {
-                return base.HalvÅrligEjerafgift()+500;
+                return 1000+500;
             }
             else
-                 return base.HalvÅrligEjerafgift();
+                 return 1000;
         }
     }
 }

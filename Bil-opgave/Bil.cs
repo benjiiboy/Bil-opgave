@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bil_opgave
 {
-    public class Bil
+    public abstract class Bil
     {
         public int BilPrisExAfgift { get; private set; }
         public int KøbsÅr { get; private set; }
@@ -42,10 +42,8 @@ namespace Bil_opgave
             return BilPrisExAfgift + RegristreringsAfgift();
         }
 
-        public virtual int HalvÅrligEjerafgift()
-        {
-            return 1000;
-        }
+        public abstract int HalvÅrligEjerafgift();
+        
 
         public Bil(string mærke, string registringsnr, int prisexafgift, int købsår, int kmprliter )
         {
