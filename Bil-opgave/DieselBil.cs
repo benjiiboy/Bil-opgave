@@ -8,14 +8,17 @@ namespace Bil_opgave
 {
     public class DieselBil : Bil
     {
-        public DieselBil(string mærke, string registringsnr, int prisexafgift, int købsår, int kmprliter, bool partikelfilter) : base(mærke, registringsnr, prisexafgift, købsår, kmprliter)
+
+
+        public DieselBil(string mærke, string registringsnr, int prisexafgift, int købsår, int kmprliter, bool partikelfilter, int tank) : base(mærke, registringsnr, prisexafgift, købsår, kmprliter)
         {
             this.PartikelFilter = partikelfilter;
+            this.Tank = tank;
         }
 
-        public DieselBil(string mærke, string registringsnr, int prisexafgift, int købsår, int kmprliter) : this(mærke, registringsnr, prisexafgift, købsår, kmprliter, true)
+        public DieselBil(string mærke, string registringsnr, int prisexafgift, int købsår, int kmprliter, int tank) : this(mærke, registringsnr, prisexafgift, købsår, kmprliter, true, tank)
         {
-
+            this.Tank = tank;
         }
 
         public bool PartikelFilter { get; set; }
@@ -43,5 +46,17 @@ namespace Bil_opgave
             return sum;
 
         }
+
+        public override int Rækkevidde()
+        {
+            return Tank * KmPrLiter;
+        }
+
+        public int Tank { get; set; }
+
+
+
+
+
     }
 }

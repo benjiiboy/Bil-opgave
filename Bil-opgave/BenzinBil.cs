@@ -8,8 +8,9 @@ namespace Bil_opgave
 {
     public sealed class BenzinBil : Bil
     {
-        public BenzinBil(string mærke, string registringsnr, int prisexafgift, int købsår, int kmprliter) : base(mærke, registringsnr, prisexafgift, købsår, kmprliter)
+        public BenzinBil(string mærke, string registringsnr, int prisexafgift, int købsår, int kmprliter, int tank) : base(mærke, registringsnr, prisexafgift, købsår, kmprliter)
         {
+            this.Tank = tank;
         }
 
         public override int HalvÅrligEjerafgift()
@@ -29,5 +30,15 @@ namespace Bil_opgave
             }
             return sum;
         }
+
+        public override int Rækkevidde()
+        {
+           return Tank * KmPrLiter;
+        }
+
+        public int Tank { get; set; }
+
+
+
     }
 }

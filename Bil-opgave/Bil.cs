@@ -54,5 +54,9 @@ namespace Bil_opgave
             this.KmPrLiter = kmprliter;
         }
 
+        public abstract int Rækkevidde();
+
+
+
     }
 }
