@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bil_opgave
 {
-    public class ElBil : Bil 
+    public class ElBil : Bil, IelMotor
     {
         public ElBil(string mærke, string registringsnr, int prisexafgift, int købsår, int batterikapacitet, int kmprkw) : base(mærke, registringsnr, prisexafgift, købsår)
         {
@@ -21,6 +21,12 @@ namespace Bil_opgave
         {
             return 0;
         }
+
+        public int LadeTid()
+        {
+            return 5;
+        }
+
         public override double RegristreringsAfgift()
         {
             return base.BilPrisExAfgift*0.2;

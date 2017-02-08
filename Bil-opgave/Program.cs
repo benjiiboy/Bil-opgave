@@ -80,7 +80,7 @@ namespace Bil_opgave
             //}
             #endregion
 
-            List<Bil> AlleBiler = new List<Bil>();
+            List<IBil> AlleBiler = new List<IBil>();
 
             /*Dette er alle Dieselbilerne*/
             AlleBiler.Add(new DieselBil("Mercedes", "ATROCKS", 30000, 2004, 12, false, 21));
@@ -141,7 +141,7 @@ namespace Bil_opgave
      " Total Pris: " + benzinbil1.TotalPris() +
      " Rækkevidde: " + benzinbil1.Rækkevidde()
     );
-
+                
                 }
                 else if (i is ElBil)
                 {
@@ -160,8 +160,12 @@ namespace Bil_opgave
     );
                 }
 
+                if (i is IelMotor)
+                {
+                    ElBil elbil2 = i as ElBil;
+                    Console.WriteLine("Bilen har en el motor og en lade tid på: " +  elbil2.LadeTid());
+                }
             }
-
             Console.ReadLine();
 
 
