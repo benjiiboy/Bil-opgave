@@ -12,32 +12,39 @@ namespace Bil_opgave
         public int KøbsÅr { get; private set; }
         public string Mærke { get; set; }
         public string RegistreringsNr { get; set; }
-        public int KmPrLiter { get; set; }
-        private int beløbsgrænse;
 
-        public virtual int RegristreringsAfgift()
+        public virtual double RegristreringsAfgift()
         {
-            int sum = 0;
+            double regAfgift;
+
             if (KøbsÅr <= 2014)
             {
-                beløbsgrænse = 80500;
+                if (BilPrisExAfgift >= 80500)
+                {
+                    regAfgift = BilPrisExAfgift * 105 / 100;
+                }
+                else
+                {
+                    regAfgift = BilPrisExAfgift * 180 / 100;
+                }
+                return regAfgift;
             }
             else
-                beløbsgrænse = 81700;
+            {
+                if (BilPrisExAfgift >= 81700)
+                {
+                    regAfgift = BilPrisExAfgift * 105 / 100;
+                }
+                else
+                {
+                    regAfgift = BilPrisExAfgift * 180 / 100;
+                }
 
-            if (BilPrisExAfgift <= beløbsgrænse)
-            {
-                sum = BilPrisExAfgift * (105 / 100);
+                return regAfgift;
             }
-            else
-            {
-                sum = beløbsgrænse * (105 / 100);
-                sum += (BilPrisExAfgift - beløbsgrænse) * (180 / 100);
-            }
-            return sum;
         }
 
-        public int TotalPris()
+        public double TotalPris()
         {
             return BilPrisExAfgift + RegristreringsAfgift();
         }
@@ -45,13 +52,12 @@ namespace Bil_opgave
         public abstract int HalvÅrligEjerafgift();
         
 
-        public Bil(string mærke, string registringsnr, int prisexafgift, int købsår, int kmprliter )
+        public Bil(string mærke, string registringsnr, int prisexafgift, int købsår)
         {
             this.Mærke = mærke;
             this.RegistreringsNr = registringsnr;
             this.BilPrisExAfgift = prisexafgift;
             this.KøbsÅr = købsår;
-            this.KmPrLiter = kmprliter;
         }
 
         public abstract int Rækkevidde();

@@ -10,10 +10,11 @@ namespace Bil_opgave
     {
 
 
-        public DieselBil(string mærke, string registringsnr, int prisexafgift, int købsår, int kmprliter, bool partikelfilter, int tank) : base(mærke, registringsnr, prisexafgift, købsår, kmprliter)
+        public DieselBil(string mærke, string registringsnr, int prisexafgift, int købsår, int kmprliter, bool partikelfilter, int tank) : base(mærke, registringsnr, prisexafgift, købsår)
         {
             this.PartikelFilter = partikelfilter;
             this.Tank = tank;
+            this.KmPrLiter = kmprliter;
         }
 
         public DieselBil(string mærke, string registringsnr, int prisexafgift, int købsår, int kmprliter, int tank) : this(mærke, registringsnr, prisexafgift, købsår, kmprliter, true, tank)
@@ -54,6 +55,7 @@ namespace Bil_opgave
 
         public int Tank { get; set; }
 
+        public int KmPrLiter{ get; set; }
 
 
 
