@@ -19,25 +19,25 @@ namespace Bil_opgave
 
             if (KøbsÅr <= 2014)
             {
-                if (BilPrisExAfgift >= 80500)
+                if (BilPrisExAfgift <= 80500)
                 {
-                    regAfgift = BilPrisExAfgift * 105 / 100;
+                    regAfgift = BilPrisExAfgift * 1.05;
                 }
                 else
                 {
-                    regAfgift = BilPrisExAfgift * 180 / 100;
+                    regAfgift = (80500*1.05) + ((BilPrisExAfgift-80500) * 1.80);
                 }
                 return regAfgift;
             }
             else
             {
-                if (BilPrisExAfgift >= 81700)
+                if (BilPrisExAfgift <= 81700)
                 {
-                    regAfgift = BilPrisExAfgift * 105 / 100;
+                    regAfgift = BilPrisExAfgift * 1.05;
                 }
                 else
                 {
-                    regAfgift = BilPrisExAfgift * 180 / 100;
+                    regAfgift = (81700 * 1.05) + ((BilPrisExAfgift - 81700) * 1.80);
                 }
 
                 return regAfgift;
