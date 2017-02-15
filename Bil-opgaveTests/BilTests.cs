@@ -161,7 +161,7 @@ namespace Bil_opgave.Tests
         {
             DieselBil dieselbil = new DieselBil("Ford", "XXXXXX", 100000, 2014, 10, true, 5);
             Assert.AreEqual(2000, dieselbil.HalvÅrligEjerafgift());
-        }
+        } //
 
         [TestMethod()]
         public void HalvÅrligEjerafgiftTest_Diesel_Med_14()
