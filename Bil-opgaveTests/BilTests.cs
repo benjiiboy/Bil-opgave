@@ -294,7 +294,7 @@ namespace Bil_opgave.Tests
         [ExpectedException(typeof(ArgumentException))]
         public void BilprisNul()
         {
-            BenzinBil benzinbil = new BenzinBil("Ford", "XXXXXX", 0, 2014, 35, 5);
+           // BenzinBil benzinbil = new BenzinBil("Ford", "XXXXXX", 0, 2014, 35, 5);
         }
 
         //
