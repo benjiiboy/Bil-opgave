@@ -295,6 +295,7 @@ namespace Bil_opgave.Tests
         public void BilprisNul()
         {
             BenzinBil benzinbil = new BenzinBil("Ford", "XXXXXX", 0, 2014, 35, 5);
+            Console.WriteLine(benzinbil.RegristreringsAfgift());
         }
 
         //
