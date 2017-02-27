@@ -287,5 +287,16 @@ namespace Bil_opgave.Tests
             Assert.AreEqual(320, benzinbil.HalvÅrligEjerafgift());
         }
 
+
+        // Unittest opg. 3: Exceptiontests
+
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentException))]
+        public void BilprisNul()
+        {
+            BenzinBil benzinbil = new BenzinBil("Ford", "XXXXXX", 0, 2014, 35, 5);
+        }
+
+        //
     }
 }

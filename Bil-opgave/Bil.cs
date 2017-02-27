@@ -15,6 +15,14 @@ namespace Bil_opgave
 
         public virtual double RegristreringsAfgift()
         {
+            //Unittest opg. 3: Kast exceptions
+            if (BilPrisExAfgift <= 0)
+                throw new ArgumentException("Prisen må ikke være <= 0");
+            if (KøbsÅr < 2014)
+                throw new ArgumentException("Købsår må ikke være før 2014");
+
+
+
             double regAfgift;
 
             if (KøbsÅr <= 2014)
