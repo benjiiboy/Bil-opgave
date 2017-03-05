@@ -298,6 +298,22 @@ namespace Bil_opgave.Tests
             Console.WriteLine(benzinbil.RegristreringsAfgift());
         }
 
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentException))]
+        public void BilprisEn()
+        {
+            BenzinBil benzinbil = new BenzinBil("Ford", "XXXXXX", 1, 2014, 35, 5);
+            Console.WriteLine(benzinbil.RegristreringsAfgift());
+        }
+
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentException))]
+        public void BilprisMinusEn()
+        {
+            BenzinBil benzinbil = new BenzinBil("Ford", "XXXXXX", -1, 2014, 35, 5);
+            Console.WriteLine(benzinbil.RegristreringsAfgift());
+        }
+
         //
     }
 }
