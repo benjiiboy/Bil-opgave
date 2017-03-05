@@ -16,6 +16,11 @@ namespace Bil_opgave
 
         public override int HalvÅrligEjerafgift()
         {
+            // Hjemmelavet exception
+            if (KmPrLiter < 5)
+                throw new HalvÅrligEjerAfgiftException(); 
+
+
             int sum = 0;
             if (KmPrLiter<20)
             {

@@ -314,6 +314,30 @@ namespace Bil_opgave.Tests
             Console.WriteLine(benzinbil.RegristreringsAfgift());
         }
 
-        //
+        // Unittest opg.4 exceptions
+
+        [TestMethod()]
+        [ExpectedException(typeof(HalvÅrligEjerAfgiftException))]
+        public void HalvÅrligEjerafgiftTest_Benzin_4()
+        {
+            BenzinBil benzinbil = new BenzinBil("Ford", "XXXXXX", 100000, 2014, 4, 5);
+            Console.WriteLine(benzinbil.HalvÅrligEjerafgift());
+        }
+
+        [TestMethod()]
+        [ExpectedException(typeof(HalvÅrligEjerAfgiftException))]
+        public void HalvÅrligEjerafgiftTest_Benzin_5()
+        {
+            BenzinBil benzinbil = new BenzinBil("Ford", "XXXXXX", 100000, 2014, 5, 5);
+            Console.WriteLine(benzinbil.HalvÅrligEjerafgift());
+        }
+
+        [TestMethod()]
+        [ExpectedException(typeof(HalvÅrligEjerAfgiftException))]
+        public void HalvÅrligEjerafgiftTest_Benzin_6()
+        {
+            BenzinBil benzinbil = new BenzinBil("Ford", "XXXXXX", 100000, 2014, 6, 5);
+            Console.WriteLine(benzinbil.HalvÅrligEjerafgift());
+        }
     }
 }
