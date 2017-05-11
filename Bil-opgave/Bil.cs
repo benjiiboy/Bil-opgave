@@ -15,29 +15,37 @@ namespace Bil_opgave
 
         public virtual double RegristreringsAfgift()
         {
+            //Unittest opg. 3: Kast exceptions
+            if (BilPrisExAfgift <= 0)
+                throw new ArgumentException("Prisen må ikke være <= 0");
+            if (KøbsÅr < 2014)
+                throw new ArgumentException("Købsår må ikke være før 2014");
+
+
+
             double regAfgift;
 
             if (KøbsÅr <= 2014)
             {
-                if (BilPrisExAfgift >= 80500)
+                if (BilPrisExAfgift <= 80500)
                 {
-                    regAfgift = BilPrisExAfgift * 105 / 100;
+                    regAfgift = BilPrisExAfgift * 1.05;
                 }
                 else
                 {
-                    regAfgift = BilPrisExAfgift * 180 / 100;
+                    regAfgift = (80500*1.05) + ((BilPrisExAfgift-80500) * 1.80);
                 }
                 return regAfgift;
             }
             else
             {
-                if (BilPrisExAfgift >= 81700)
+                if (BilPrisExAfgift <= 81700)
                 {
-                    regAfgift = BilPrisExAfgift * 105 / 100;
+                    regAfgift = BilPrisExAfgift * 1.05;
                 }
                 else
                 {
-                    regAfgift = BilPrisExAfgift * 180 / 100;
+                    regAfgift = (81700 * 1.05) + ((BilPrisExAfgift - 81700) * 1.80);
                 }
 
                 return regAfgift;

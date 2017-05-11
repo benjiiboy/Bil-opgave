@@ -29,7 +29,7 @@ namespace Bil_opgave
 
         public override double RegristreringsAfgift()
         {
-            return base.BilPrisExAfgift*0.2;
+            return base.RegristreringsAfgift()*0.2;
         }
 
 

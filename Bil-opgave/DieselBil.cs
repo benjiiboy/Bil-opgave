@@ -30,9 +30,10 @@ namespace Bil_opgave
             int sum = 0;
             if (PartikelFilter == false)
             {
-                return sum += 500;
+                 sum += 500;
             }
-            else if (KmPrLiter <15)
+
+            if (KmPrLiter <15)
             {
                  sum += 2000;
             }

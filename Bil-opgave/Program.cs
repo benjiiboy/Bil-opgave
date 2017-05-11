@@ -101,7 +101,7 @@ namespace Bil_opgave
             AlleBiler.Add(new ElBil("Mazda", "146GH7", 132000, 2012, 50, 40));
             AlleBiler.Add(new ElBil("Ford", "GHRT56", 333000, 2010, 33, 30));
             AlleBiler.Add(new ElBil("Toyota", "1GF4G67", 100000, 2017, 70, 9));
-            AlleBiler.Add(new ElBil("Mercedes", "GGH55G1", 150000x, 2006, 20, 20));
+            AlleBiler.Add(new ElBil("Mercedes", "GGH55G1", 150000, 2006, 20, 20));
 
             foreach (Bil i in AlleBiler)
             {
